@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-fraunces: "Fraunces", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink font-body antialiased; }
+
+/* ---------- shared primitives ---------- */
+.eyebrow {
+  @apply text-[12.5px] font-semibold tracking-[0.18em] uppercase text-gold mb-4;
+}
+.h-display {
+  @apply font-display font-semibold leading-[1.12] tracking-[-0.01em];
+}
+.btn {
+  @apply inline-block px-6 py-3 rounded-full font-semibold text-[15px] transition;
+}
+.btn-solid { @apply btn bg-crimson text-white shadow-soft hover:bg-crimdeep hover:-translate-y-px; }
+.btn-ghost { @apply btn border-[1.5px] border-ink text-ink hover:bg-ink hover:text-cream; }
+.card-lift { @apply transition hover:-translate-y-1 hover:shadow-soft; }
+.section { @apply py-24; }
+.section-alt { @apply bg-paper border-t border-b border-line; }
+.prose-page p { @apply text-soft mb-5 text-[16.5px]; }
+.prose-page h2 { @apply font-display text-[28px] font-semibold mt-10 mb-3 text-ink; }
+.prose-page h3 { @apply font-display text-[20px] font-semibold mt-8 mb-2 text-ink; }
+.prose-page blockquote {
+  @apply border-l-[3px] border-gold pl-5 py-1 my-6 text-soft italic;
+}
+
+/* ---------- reveal animation ---------- */
+.reveal { @apply opacity-0 translate-y-6 transition-all duration-700 ease-out; }
+.reveal.visible { @apply opacity-100 translate-y-0; }
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { @apply opacity-100 translate-y-0 transition-none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- page hero for inner pages ---------- */
+.page-hero { @apply bg-crimson text-white py-20; }
+.page-hero .eyebrow { @apply text-[#e9c98a]; }
+.page-hero h1 { @apply font-display text-4xl md:text-5xl font-semibold leading-tight; }
+.page-hero p { @apply text-[#f3e3cd] mt-4 max-w-2xl text-[17px]; }

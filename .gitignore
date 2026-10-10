@@ -1,1 +1,5 @@
-.DS_Store
+node_modules/
+.next/
+data/orders/
+*.tsbuildinfo
+next-env.d.ts
